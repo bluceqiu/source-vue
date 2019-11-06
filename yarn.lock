@@ -613,7 +613,15 @@
     "@babel/helper-create-regexp-features-plugin" "^7.7.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
-"@babel/preset-env@^7.6.3":
+"@babel/polyfill@^7.7.0":
+  version "7.7.0"
+  resolved "https://registry.npm.taobao.org/@babel/polyfill/download/@babel/polyfill-7.7.0.tgz#e1066e251e17606ec7908b05617f9b7f8180d8f3"
+  integrity sha1-4QZuJR4XYG7HkIsFYX+bf4GA2PM=
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.2"
+
+"@babel/preset-env@^7.6.3", "@babel/preset-env@^7.7.1":
   version "7.7.1"
   resolved "https://registry.npm.taobao.org/@babel/preset-env/download/@babel/preset-env-7.7.1.tgz#04a2ff53552c5885cf1083e291c8dd5490f744bb"
   integrity sha1-BKL/U1UsWIXPEIPikcjdVJD3RLs=
@@ -2302,7 +2310,12 @@ core-js-pure@^3.0.0:
   resolved "https://registry.npm.taobao.org/core-js-pure/download/core-js-pure-3.3.6.tgz#4c2378184acd8485a83ca9fdea201b844c554165"
   integrity sha1-TCN4GErNhIWoPKn96iAbhExVQWU=
 
-core-js@^3.3.2:
+core-js@^2.6.5:
+  version "2.6.10"
+  resolved "https://registry.npm.taobao.org/core-js/download/core-js-2.6.10.tgz#8a5b8391f8cc7013da703411ce5b585706300d7f"
+  integrity sha1-iluDkfjMcBPacDQRzltYVwYwDX8=
+
+core-js@^3.3.2, core-js@^3.3.6:
   version "3.3.6"
   resolved "https://registry.npm.taobao.org/core-js/download/core-js-3.3.6.tgz#6ad1650323c441f45379e176ed175c0d021eac92"
   integrity sha1-atFlAyPEQfRTeeF27RdcDQIerJI=
@@ -7895,6 +7908,11 @@ vue@^2.6.10:
   version "2.6.10"
   resolved "https://registry.npm.taobao.org/vue/download/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha1-pysaQqTYKnIepDjRtr9V5mGVxjc=
+
+vuex@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.npm.taobao.org/vuex/download/vuex-3.1.1.tgz#0c264bfe30cdbccf96ab9db3177d211828a5910e"
+  integrity sha1-DCZL/jDNvM+Wq52zF30hGCilkQ4=
 
 watchpack@^1.6.0:
   version "1.6.0"
