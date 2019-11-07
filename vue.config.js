@@ -1,5 +1,6 @@
 module.exports = {
-    lintOnSave: false
+    lintOnSave: false,
+    runtimeCompiler: true // 支持运行时编译， 需要build打包才能生效
 
 
     // // baseUrl: process.env.NODE_ENV === 'production'

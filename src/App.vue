@@ -1,7 +1,7 @@
 <!--
  * @Author: xiaolong.qiu
  * @Date: 2019-11-06 10:27:32
- * @LastEditTime: 2019-11-07 10:19:26
+ * @LastEditTime: 2019-11-07 19:24:26
  -->
 <template>
   <div id="app">
@@ -19,12 +19,19 @@
 
     <p>{{getOrGetter}}</p>
     <button @click="goTestSet">test computed setter</button>
+
+    <router-link to="/abc">abc</router-link>
+    <router-link to="/def">def</router-link>
+    <router-link to="/user/white?id=1#222">user</router-link>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex';
 import Vue from 'vue'
+// import Vue from 'vue/dist/vue.esm.js'
 export default {
   name: 'app',
   data(){
