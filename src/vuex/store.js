@@ -1,7 +1,7 @@
 /*
  * @Author: xiaolong.qiu
  * @Date: 2019-11-06 16:06:12
- * @LastEditTime: 2019-11-06 20:18:09
+ * @LastEditTime: 2019-11-07 11:20:07
  */
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -22,7 +22,7 @@ const store = new Vuex.Store({
             return state.todoList.length;
         },
         getTodoById: state => id => { // 传参
-            return state.todoList.find(todo=>todo.id===id).text;
+            // return state.todoList.find(todo=>todo.id===id).text;
         }
     },
     mutations: { // mutations 必须是同步的

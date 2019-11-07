@@ -1,7 +1,7 @@
 <!--
  * @Author: xiaolong.qiu
  * @Date: 2019-11-06 10:27:32
- * @LastEditTime: 2019-11-06 20:15:55
+ * @LastEditTime: 2019-11-07 10:19:26
  -->
 <template>
   <div id="app">
@@ -11,11 +11,14 @@
     <p @click="changeName">{{name}}</p> 
     <!-- <p>todoCount:{{ this.$store.getters.todoCount }}</p> -->
     <p>todoCount:{{ todoCount }}</p>
-    <p @click="addNewState">新增状态</p>
+    <button @click="addNewState">新增状态</button>
     <p>{{ this.$store.getters.textGetter }}</p>
     <p>{{ this.$store.getters.getTodoById(1) }}</p>
     <p>{{ getTodoById(2) }}</p>
     <p>{{ this.$store.state.newProp }}</p>
+
+    <p>{{getOrGetter}}</p>
+    <button @click="goTestSet">test computed setter</button>
   </div>
 </template>
 
@@ -26,14 +29,22 @@ export default {
   name: 'app',
   data(){
     return {
-
+      value: 'hello'
     }
   },
   computed: {
+      getOrGetter: {
+        get(){
+          return this.value + 'world;'
+        },
+        set(newVal){
+          this.value = newVal + 1;
+        }
+      },
       name () {
         return this.$store.state.author
       },
-      // todoCount(){
+      // todoCount(){ // 直接获取getters
       //   return this.$store.getters.todoCount
       // },
       ...mapGetters([ // mapGetters
@@ -42,6 +53,9 @@ export default {
       ])
     },
     methods: {
+      goTestSet(){
+        this.getOrGetter = 'everyBody';
+      },
       changeName(){
         this.$store.commit({
           type: 'changeAuthor',
