@@ -1,7 +1,7 @@
 <!--
  * @Author: xiaolong.qiu
  * @Date: 2019-11-06 10:27:32
- * @LastEditTime: 2019-11-07 19:24:26
+ * @LastEditTime: 2019-11-08 15:18:56
  -->
 <template>
   <div id="app">
@@ -23,6 +23,9 @@
     <router-link to="/abc">abc</router-link>
     <router-link to="/def">def</router-link>
     <router-link to="/user/white?id=1#222">user</router-link>
+    <!-- /:color->$route.params
+    ?id=1 -> $route.query
+    #xxx -> $route.hash -->
 
     <router-view></router-view>
   </div>
@@ -38,6 +41,10 @@ export default {
     return {
       value: 'hello'
     }
+  },
+  mounted(){
+    window.xxx = this;
+    console.log(this);
   },
   computed: {
       getOrGetter: {
