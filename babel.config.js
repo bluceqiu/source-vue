@@ -1,7 +1,7 @@
 /*
  * @Author: xiaolong.qiu
  * @Date: 2019-11-06 10:27:32
- * @LastEditTime: 2019-11-06 19:47:18
+ * @LastEditTime: 2019-11-21 16:46:08
  */
 module.exports = {
   presets: [
@@ -9,4 +9,5 @@ module.exports = {
     // 'core-js@2',
     "@babel/preset-env"
   ]
+  // "plugins": ["@babel/plugin-proposal-decorators", { "legacy": true }]
 }

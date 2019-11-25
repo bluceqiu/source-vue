@@ -1,11 +1,11 @@
 <!--
  * @Author: xiaolong.qiu
  * @Date: 2019-11-06 10:27:32
- * @LastEditTime: 2019-11-08 15:18:56
+ * @LastEditTime: 2019-11-21 16:52:23
  -->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="">
 
     <!-- <p @click="$store.commit('changeAuthor')">{{name}}</p>  -->
     <p @click="changeName">{{name}}</p> 
@@ -28,12 +28,15 @@
     #xxx -> $route.hash -->
 
     <router-view></router-view>
+
+    <button @click="tryFn">测试箭头函数在methods里面的表现</button>
   </div>
 </template>
 
 <script>
 import {mapGetters} from 'vuex';
 import Vue from 'vue'
+// import Math from '../src/math'
 // import Vue from 'vue/dist/vue.esm.js'
 export default {
   name: 'app',
@@ -45,6 +48,34 @@ export default {
   mounted(){
     window.xxx = this;
     console.log(this);
+
+    let arr = [1,2,3]
+    for(let i=0; i<arr.length; i++){
+      let fn = i=>{
+        setTimeout(() => { // 这里的函数不能有i ，否则找不到外层的i，就会是undefined
+          console.log('check:',arr[i]);
+        }, 0);
+      }
+      fn(i);
+    }
+
+
+    // for (var i = 0; i < 5; i++) {
+    //     (function (i) {
+    //         setTimeout(function () {
+    //             console.log(i);
+    //         }, 0);
+    //     })(i);
+    // }
+
+  // const math = new Math();
+
+  // // passed parameters should get logged now
+  // let result = math.add(2, 4);
+
+  // console.log(result)
+
+    
   },
   computed: {
       getOrGetter: {
@@ -78,6 +109,10 @@ export default {
       },
       addNewState(){
         Vue.set(this.$store.state, 'newProp', 123);
+      },
+      tryFn: ()=>{
+        debugger
+        console.log(this) // undefined,  箭头函数内的this指向的是定义时候的父级作用域的上下文， 定义时的this为什么为undefined
       }
     }
 }
