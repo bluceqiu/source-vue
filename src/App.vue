@@ -30,6 +30,8 @@
     <router-view></router-view>
 
     <button @click="tryFn">测试箭头函数在methods里面的表现</button>
+
+    <cw/>
   </div>
 </template>
 
@@ -38,8 +40,13 @@ import {mapGetters} from 'vuex';
 import Vue from 'vue'
 // import Math from '../src/math'
 // import Vue from 'vue/dist/vue.esm.js'
+import cw from './components/computed&watch';
+
 export default {
   name: 'app',
+  components:{
+    cw
+  },
   data(){
     return {
       value: 'hello'
